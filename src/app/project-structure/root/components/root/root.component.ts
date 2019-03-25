@@ -22,6 +22,8 @@
  *
  */
 import { Component, OnInit } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'fg-root',
@@ -30,9 +32,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootComponent implements OnInit {
 
-  constructor() { }
+/***
+ *    ┌─┐┬─┐┌─┐┌─┐┌─┐┬─┐┌┬┐┬┌─┐┌─┐
+ *    ├─┘├┬┘│ │├─┘├┤ ├┬┘ │ │├┤ └─┐
+ *    ┴  ┴└─└─┘┴  └─┘┴└─ ┴ ┴└─┘└─┘
+ */
+ public switcher$: Observable<boolean>;
 
+ /***
+ *    ┌─┐┌─┐┌┐┌┌─┐┌┬┐┬─┐┬ ┬┌─┐┌┬┐┌─┐┬─┐
+ *    │  │ ││││└─┐ │ ├┬┘│ ││   │ │ │├┬┘
+ *    └─┘└─┘┘└┘└─┘ ┴ ┴└─└─┘└─┘ ┴ └─┘┴└─
+ */
+  constructor() {
+    this.switcher$ = interval(1000)
+      .pipe(map(() => (Math.floor(Math.random() * 101) % 2 === 0)));
+  }
+
+/***
+ *    ┬  ┬┌─┐┌─┐  ┌─┐┬┌─┐┬  ┌─┐
+ *    │  │├┤ ├┤   │  ││  │  ├┤
+ *    ┴─┘┴└  └─┘  └─┘┴└─┘┴─┘└─┘
+ *    ┬ ┬┌─┐┌─┐┬┌─┌─┐
+ *    ├─┤│ ││ │├┴┐└─┐
+ *    ┴ ┴└─┘└─┘┴ ┴└─┘
+ */
   ngOnInit() {
   }
+
+/***
+ *    ┌┬┐┌─┐┌┬┐┬ ┬┌─┐┌┬┐┌─┐
+ *    │││├┤  │ ├─┤│ │ ││└─┐
+ *    ┴ ┴└─┘ ┴ ┴ ┴└─┘─┴┘└─┘
+ */
+
 
 }
