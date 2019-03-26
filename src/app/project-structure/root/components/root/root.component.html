@@ -21,6 +21,31 @@
  *       ╚═╝   ╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
  *
  */ -->
-
-<strong>Asynchronous boolean value:</strong> {{ switcher$ | async }}
-
+ <div class="container">
+   <div class="row">
+     <div class="col">
+       <div class="row">
+        <div class="col text-center p-5">
+          <button
+              (click)="correctApproach = true"
+              class="btn btn-info">Correct approach</button>
+        </div>
+        <div class="col text-center p-5">
+          <button
+              (click)="correctApproach = false"
+              class="btn btn-danger">Bad approach</button>
+        </div>
+       </div>
+     </div>
+   </div>
+   <div class="row">
+     <div class="col">
+       <ng-container *ngIf="correctApproach; else badApproach" >
+        <fg-correct-approach></fg-correct-approach>
+       </ng-container>
+       <ng-template #badApproach>
+         <fg-bad-approach></fg-bad-approach>
+       </ng-template>
+     </div>
+   </div>
+ </div>

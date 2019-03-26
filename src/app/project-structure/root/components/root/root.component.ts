@@ -21,50 +21,15 @@
  *    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝
  *
  */
-import { Component, OnInit } from '@angular/core';
-import { Observable, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'fg-root',
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss']
 })
-export class RootComponent implements OnInit {
+export class RootComponent {
 
-/***
- *    ┌─┐┬─┐┌─┐┌─┐┌─┐┬─┐┌┬┐┬┌─┐┌─┐
- *    ├─┘├┬┘│ │├─┘├┤ ├┬┘ │ │├┤ └─┐
- *    ┴  ┴└─└─┘┴  └─┘┴└─ ┴ ┴└─┘└─┘
- */
- public switcher$: Observable<boolean>;
-
- /***
- *    ┌─┐┌─┐┌┐┌┌─┐┌┬┐┬─┐┬ ┬┌─┐┌┬┐┌─┐┬─┐
- *    │  │ ││││└─┐ │ ├┬┘│ ││   │ │ │├┬┘
- *    └─┘└─┘┘└┘└─┘ ┴ ┴└─└─┘└─┘ ┴ └─┘┴└─
- */
-  constructor() {
-    this.switcher$ = interval(1000)
-      .pipe(map(() => (Math.floor(Math.random() * 101) % 2 === 0)));
-  }
-
-/***
- *    ┬  ┬┌─┐┌─┐  ┌─┐┬┌─┐┬  ┌─┐
- *    │  │├┤ ├┤   │  ││  │  ├┤
- *    ┴─┘┴└  └─┘  └─┘┴└─┘┴─┘└─┘
- *    ┬ ┬┌─┐┌─┐┬┌─┌─┐
- *    ├─┤│ ││ │├┴┐└─┐
- *    ┴ ┴└─┘└─┘┴ ┴└─┘
- */
-  ngOnInit() {
-  }
-
-/***
- *    ┌┬┐┌─┐┌┬┐┬ ┬┌─┐┌┬┐┌─┐
- *    │││├┤  │ ├─┤│ │ ││└─┐
- *    ┴ ┴└─┘ ┴ ┴ ┴└─┘─┴┘└─┘
- */
-
+  public correctApproach: boolean = true;
 
 }
