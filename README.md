@@ -1,4 +1,4 @@
-#Study about interpolation with Async Pipe
+# Study about interpolation with Async Pipe
 
 Using interpolation or data binding with async pipes can lead to unexpected results.
 The problem is that the variable can change while the view is rendered, so a part of the
