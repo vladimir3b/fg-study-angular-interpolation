@@ -50,4 +50,4 @@ Instead we should the following approach:
 
 ```
 
-More on this subject [here](https://ultimatecourses.com/blog/angular-ngif-else-then)
+More on this subject [here](https://ultimatecourses.com/blog/angular-ngif-else-then).
